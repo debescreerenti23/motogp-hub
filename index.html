@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MotoGP Hub | Edición Completa</title>
+    <title>MotoGP Hub | Clasificación Top 10</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
@@ -60,7 +60,7 @@
 </head>
 <body class="pb-24">
 
-    <!-- Header -->
+    <!-- Cabecera -->
     <header class="bg-slate-900/90 backdrop-blur-xl border-b border-white/10 sticky top-0 z-50 p-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-2">
@@ -122,7 +122,6 @@
                         <thead class="bg-slate-800 text-[10px] font-black text-slate-400 uppercase tracking-wider">
                             <tr id="ranking-header">
                                 <th class="p-4 sticky-col z-30 min-w-[200px]">Piloto / País</th>
-                                <!-- Columnas GP generadas por JS -->
                                 <th class="p-4 text-center bg-red-600 text-white sticky right-0 z-30">Total</th>
                             </tr>
                         </thead>
@@ -144,8 +143,8 @@
 
         <!-- EQUIPOS -->
         <div id="teams" class="tab-content">
-            <h2 class="text-2xl font-black italic uppercase mb-6 tracking-tighter">Equipos y Pilotos</h2>
-            <div id="teams-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <h2 class="text-2xl font-black italic uppercase mb-6 tracking-tighter text-white">Equipos MotoGP 2026</h2>
+            <div id="teams-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <!-- Dinámico -->
             </div>
         </div>
@@ -201,24 +200,29 @@
                 { id: 22, short: "KAZ", flag: "kz", name: "GP de Kazajistán", venue: "Sokol Circuit", date: "Pendiente", status: "Pendiente" }
             ],
             teams: [
-                { id: "ducati", name: "Ducati Lenovo Team", color: "bg-red-600", bike: "GP26", riders: ["F. Bagnaia", "Marc Márquez"] },
-                { id: "ktm", name: "Red Bull KTM Factory", color: "bg-orange-600", bike: "RC16", riders: ["B. Binder", "Pedro Acosta"] },
-                { id: "aprilia", name: "Aprilia Racing", color: "bg-black", bike: "RS-GP", riders: ["Jorge Martín", "M. Bezzecchi"] },
-                { id: "yamaha", name: "Monster Yamaha", color: "bg-blue-900", bike: "YZR-M1", riders: ["F. Quartararo", "A. Rins"] },
-                { id: "honda", name: "Repsol Honda Team", color: "bg-orange-500", bike: "RC213V", riders: ["L. Marini", "Joan Mir"] },
-                { id: "pramac", name: "Prima Pramac Yamaha", color: "bg-purple-600", bike: "YZR-M1", riders: ["M. Oliveira", "Jack Miller"] }
+                { id: "ducati-lenovo", name: "Ducati Lenovo Team", color: "bg-red-600", bike: "Desmosedici GP26", riders: ["Francesco Bagnaia", "Marc Márquez"] },
+                { id: "redbull-ktm", name: "Red Bull KTM Factory", color: "bg-orange-600", bike: "KTM RC16", riders: ["Brad Binder", "Pedro Acosta"] },
+                { id: "aprilia-racing", name: "Aprilia Racing", color: "bg-black", bike: "Aprilia RS-GP", riders: ["Jorge Martín", "Marco Bezzecchi"] },
+                { id: "monster-yamaha", name: "Monster Energy Yamaha", color: "bg-blue-900", bike: "Yamaha YZR-M1", riders: ["Fabio Quartararo", "Alex Rins"] },
+                { id: "repsol-honda", name: "Repsol Honda Team", color: "bg-orange-500", bike: "Honda RC213V", riders: ["Luca Marini", "Joan Mir"] },
+                { id: "pramac-yamaha", name: "Prima Pramac Yamaha", color: "bg-purple-600", bike: "Yamaha YZR-M1", riders: ["Miguel Oliveira", "Jack Miller"] },
+                { id: "gresini-racing", name: "Gresini Racing Ducati", color: "bg-sky-400", bike: "Desmosedici GP25", riders: ["Alex Márquez", "Fermin Aldeguer"] },
+                { id: "vr46-racing", name: "Pertamina Enduro VR46", color: "bg-yellow-400", bike: "Desmosedici GP25", riders: ["Fabio Di Giannantonio", "Franco Morbidelli"] },
+                { id: "trackhouse-aprilia", name: "Trackhouse Racing", color: "bg-blue-600", bike: "Aprilia RS-GP", riders: ["Raul Fernández", "Ai Ogura"] },
+                { id: "tech3-gasgas", name: "Red Bull GASGAS Tech3", color: "bg-red-700", bike: "KTM RC16", riders: ["Maverick Viñales", "Enea Bastianini"] },
+                { id: "lcr-honda", name: "LCR Honda", color: "bg-green-600", bike: "Honda RC213V", riders: ["Johann Zarco", "Somkiat Chantra"] }
             ],
             standings: [
-                { rank: 1, name: "M. Bezzecchi", teamId: "aprilia", flag: "it", points: [25, 25, 20, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 70 },
-                { rank: 2, name: "Jorge Martín", teamId: "aprilia", flag: "es", points: [20, 16, 25, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 61 },
-                { rank: 3, name: "Pedro Acosta", teamId: "ktm", flag: "es", points: [16, 20, 16, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 52 },
-                { rank: 4, name: "Marc Márquez", teamId: "ducati", flag: "es", points: [13, 13, 11, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 37 },
-                { rank: 5, name: "F. Bagnaia", teamId: "ducati", flag: "it", points: [11, 0, 13, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 24 },
-                { rank: 6, name: "B. Binder", teamId: "ktm", flag: "za", points: [10, 11, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 21 },
-                { rank: 7, name: "F. Quartararo", teamId: "yamaha", flag: "fr", points: [9, 8, 3, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 20 },
-                { rank: 8, name: "A. Rins", teamId: "yamaha", flag: "es", points: [8, 5, 5, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 18 },
-                { rank: 9, name: "M. Oliveira", teamId: "pramac", flag: "pt", points: [5, 9, 2, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 16 },
-                { rank: 10, name: "Jack Miller", teamId: "pramac", flag: "au", points: [7, 2, 6, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 15 }
+                { rank: 1, name: "Marc Márquez", teamId: "ducati-lenovo", flag: "es", points: [25, 20, 25, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 70 },
+                { rank: 2, name: "Jorge Martín", teamId: "aprilia-racing", flag: "es", points: [20, 25, 16, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 61 },
+                { rank: 3, name: "F. Bagnaia", teamId: "ducati-lenovo", flag: "it", points: [16, 16, 20, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 52 },
+                { rank: 4, name: "Pedro Acosta", teamId: "redbull-ktm", flag: "es", points: [13, 13, 11, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 37 },
+                { rank: 5, name: "E. Bastianini", teamId: "tech3-gasgas", flag: "it", points: [11, 10, 13, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 34 },
+                { rank: 6, name: "M. Bezzecchi", teamId: "aprilia-racing", flag: "it", points: [10, 11, 9, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 30 },
+                { rank: 7, name: "Maverick Viñales", teamId: "tech3-gasgas", flag: "es", points: [9, 8, 10, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 27 },
+                { rank: 8, name: "Brad Binder", teamId: "redbull-ktm", flag: "za", points: [8, 9, 8, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 25 },
+                { rank: 9, name: "Fabio Quartararo", teamId: "monster-yamaha", flag: "fr", points: [7, 7, 7, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 21 },
+                { rank: 10, name: "Alex Márquez", teamId: "gresini-racing", flag: "es", points: [6, 6, 6, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], total: 18 }
             ]
         };
 
@@ -229,13 +233,11 @@
             event.currentTarget.classList.add('active');
         }
 
-        // CARGAR RANKING Y DASHBOARD
         function initRanking() {
             const header = document.getElementById('ranking-header');
             const body = document.getElementById('ranking-body');
             const top10 = document.getElementById('top10-list');
             
-            // Generar cabeceras GP
             const pilotTh = header.cells[0];
             const totalTh = header.cells[header.cells.length - 1];
             header.innerHTML = '';
@@ -249,7 +251,9 @@
             });
             header.appendChild(totalTh);
 
-            // Generar filas de pilotos
+            body.innerHTML = ''; // Limpiar cuerpo antes de renderizar
+            top10.innerHTML = ''; // Limpiar Dashboard antes de renderizar
+
             DATA.standings.forEach((p, idx) => {
                 const pointsCells = p.points.map(pt => `
                     <td class="p-3 text-center border-l border-white/5 ${pt > 0 ? 'text-white font-black' : 'text-slate-700'}">
@@ -274,7 +278,7 @@
                 `;
 
                 if(idx < 10) {
-                    const team = DATA.teams.find(t => t.id === p.teamId);
+                    const team = DATA.teams.find(t => t.id === p.teamId) || {color: 'bg-slate-700', name: 'N/A'};
                     top10.innerHTML += `
                         <div class="bg-slate-900 border border-white/10 rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300">
                             <div class="h-1 ${team.color}"></div>
@@ -288,7 +292,7 @@
                                 <div>
                                     <h4 class="font-black uppercase text-xs truncate italic">${p.name}</h4>
                                     <div class="flex justify-between items-center mt-1">
-                                        <span class="text-[8px] text-slate-500 font-bold uppercase">${p.teamId}</span>
+                                        <span class="text-[8px] text-slate-400 font-bold uppercase truncate pr-2">${team.name}</span>
                                         <span class="text-xl font-black italic text-white leading-none">${p.total}</span>
                                     </div>
                                 </div>
@@ -299,14 +303,13 @@
             });
         }
 
-        // CARGAR CALENDARIO
         function initCalendar() {
             const container = document.getElementById('rounds-list');
             container.innerHTML = '';
             DATA.calendar.forEach(race => {
                 const isNext = race.status === 'Siguiente';
                 const statusColor = isNext ? 'text-red-500' : (race.status === 'Terminado' ? 'text-green-500' : 'text-slate-500');
-                const borderColor = isNext ? 'border-red-600/40 bg-red-600/5' : 'border-white/5';
+                const borderColor = isNext ? 'border-red-600/40 bg-red-600/5 shadow-red-900/20 shadow-xl' : 'border-white/5';
 
                 container.innerHTML += `
                 <div class="bg-slate-900/60 p-5 rounded-3xl border ${borderColor} flex flex-col group hover:border-white/20 transition-all">
@@ -323,13 +326,12 @@
             });
         }
 
-        // CARGAR EQUIPOS
         function initTeams() {
             const container = document.getElementById('teams-list');
             container.innerHTML = '';
             DATA.teams.forEach(team => {
                 const riders = team.riders.map(r => `
-                    <div class="bg-slate-950 p-2 rounded-xl border border-white/5 text-[9px] font-black uppercase text-center text-slate-300">
+                    <div class="bg-slate-950 p-3 rounded-2xl border border-white/5 text-[10px] font-black uppercase text-center text-slate-300 group-hover:border-white/20 transition-all">
                         ${r}
                     </div>
                 `).join('');
@@ -340,11 +342,11 @@
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-6">
                             <div>
-                                <h3 class="text-lg font-black italic uppercase leading-tight">${team.name}</h3>
+                                <h3 class="text-xl font-black italic uppercase leading-tight text-white">${team.name}</h3>
                                 <p class="text-[10px] font-mono font-bold text-red-500 mt-1 uppercase tracking-widest">${team.bike}</p>
                             </div>
                         </div>
-                        <div class="grid grid-cols-2 gap-2 mt-4">${riders}</div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">${riders}</div>
                     </div>
                 </div>`;
             });
